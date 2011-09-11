@@ -1,0 +1,22 @@
+<project name="blockingdependqueue" default="compile" basedir=".">
+    <property name="src" location="src"/>
+    <property name="build" location="bin"/>
+    <property name="dist"  location="dist"/>
+
+    <target name="init">
+        <tstamp/>
+        <mkdir dir="${build}"/>
+    </target>
+
+    <target name="compile" depends="init"
+        description="compile the source " >
+        <javac includeantruntime="false"
+            srcdir="${src}" destdir="${build}"/>
+    </target>
+
+    <target name="clean"
+        description="clean up" >
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+    </target>
+</project>
